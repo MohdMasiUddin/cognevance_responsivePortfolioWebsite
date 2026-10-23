@@ -1,38 +1,34 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const sqlite3 = require('sqlite3').verbose();
+const { Pool } = require('pg');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 const rootDir = __dirname;
 const frontendDir = path.join(rootDir, 'frontend');
-const dataDir = path.join(rootDir, 'data');
-const dbPath = path.join(dataDir, 'portfolio.db');
 
-fs.mkdirSync(dataDir, { recursive: true });
-
-const db = new sqlite3.Database(dbPath, (err) => {
-  if (err) {
-    console.error('Error opening database:', err.message);
-  } else {
-    console.log('Connected to SQLite database.');
-  }
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 });
 
-const initializeDatabase = () => {
-  db.serialize(() => {
-    db.run(`
+const initializeDatabase = async () => {
+  try {
+    await pool.query(`
       CREATE TABLE IF NOT EXISTS contacts (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        id SERIAL PRIMARY KEY,
         name TEXT NOT NULL,
         email TEXT NOT NULL,
         subject TEXT,
         message TEXT NOT NULL,
-        created_at TEXT DEFAULT CURRENT_TIMESTAMP
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
     `);
-  });
+    console.log('Connected to PostgreSQL database.');
+  } catch (error) {
+    console.error('Database connection error:', error.message);
+  }
 };
 
 initializeDatabase();
@@ -45,7 +41,7 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Portfolio API running successfully.' });
 });
 
-app.post('/api/contact', (req, res) => {
+app.post('/api/contact', async (req, res) => {
   const { name, email, subject, message } = req.body;
 
   if (!name || !email || !message) {
@@ -55,36 +51,37 @@ app.post('/api/contact', (req, res) => {
     });
   }
 
-  const sql = `
-    INSERT INTO contacts (name, email, subject, message)
-    VALUES (?, ?, ?, ?)
-  `;
-
-  db.run(sql, [name.trim(), email.trim(), (subject || '').trim(), message.trim()], function (err) {
-    if (err) {
-      console.error('Database error:', err.message);
-      return res.status(500).json({
-        success: false,
-        message: 'Unable to save your message. Please try again later.'
-      });
-    }
+  try {
+    const result = await pool.query(
+      `INSERT INTO contacts (name, email, subject, message) VALUES ($1, $2, $3, $4) RETURNING *`,
+      [name.trim(), email.trim(), (subject || '').trim(), message.trim()]
+    );
 
     return res.status(201).json({
       success: true,
-      message: 'Your message has been sent successfully. I will get back to you soon.'
+      message: 'Your message has been sent successfully. I will get back to you soon.',
+      data: result.rows[0]
     });
-  });
+  } catch (err) {
+    console.error('Database error:', err.message);
+    return res.status(500).json({
+      success: false,
+      message: 'Unable to save your message. Please try again later.'
+    });
+  }
 });
 
-app.get('/api/messages', (req, res) => {
-  db.all('SELECT id, name, email, subject, message, created_at FROM contacts ORDER BY id DESC', (err, rows) => {
-    if (err) {
-      console.error('Database error:', err.message);
-      return res.status(500).json({ success: false, message: 'Unable to fetch messages.' });
-    }
+app.get('/api/messages', async (req, res) => {
+  try {
+    const result = await pool.query(
+      'SELECT id, name, email, subject, message, created_at FROM contacts ORDER BY id DESC'
+    );
 
-    return res.json({ success: true, data: rows });
-  });
+    return res.json({ success: true, data: result.rows });
+  } catch (err) {
+    console.error('Database error:', err.message);
+    return res.status(500).json({ success: false, message: 'Unable to fetch messages.' });
+  }
 });
 
 app.get('*', (req, res) => {
