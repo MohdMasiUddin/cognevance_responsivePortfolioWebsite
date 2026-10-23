@@ -1,0 +1,55 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1600" height="1000" fill="#0B1220" />
+    <rect x="0" y="0" width="1600" height="70" fill="#111C2F" />
+    <circle cx="120" cy="35" r="16" fill="#6EA8FE" />
+    <text x="170" y="45" fill="#EDF2FF" font-size="28" font-family="Arial, sans-serif" font-weight="700">Alex
+        Carter</text>
+    <text x="1140" y="45" fill="#B7C4DB" font-size="20" font-family="Arial, sans-serif">About</text>
+    <text x="1250" y="45" fill="#B7C4DB" font-size="20" font-family="Arial, sans-serif">Skills</text>
+    <text x="1365" y="45" fill="#B7C4DB" font-size="20" font-family="Arial, sans-serif">Projects</text>
+    <text x="1510" y="45" fill="#B7C4DB" font-size="20" font-family="Arial, sans-serif">Contact</text>
+
+    <text x="130" y="220" fill="#7EF0D7" font-size="26" font-family="Arial, sans-serif" font-weight="700">FULL STACK WEB
+        DEVELOPER</text>
+    <text x="130" y="330" fill="#EDF2FF" font-size="72" font-family="Arial, sans-serif" font-weight="800">Building
+        modern</text>
+    <text x="130" y="410" fill="#6EA8FE" font-size="72" font-family="Arial, sans-serif" font-weight="800">digital
+        experiences.</text>
+    <text x="130" y="485" fill="#B7C4DB" font-size="28" font-family="Arial, sans-serif">I design and build responsive
+        web apps with clean interfaces</text>
+    <text x="130" y="520" fill="#B7C4DB" font-size="28" font-family="Arial, sans-serif">and reliable backend
+        systems.</text>
+
+    <rect x="130" y="560" width="180" height="62" rx="31" fill="#6EA8FE" />
+    <text x="200" y="600" fill="#071426" font-size="26" font-family="Arial, sans-serif" font-weight="700"
+        text-anchor="middle">View Projects</text>
+
+    <rect x="340" y="560" width="200" height="62" rx="31" fill="transparent" stroke="#2A3A55" />
+    <text x="440" y="600" fill="#EDF2FF" font-size="26" font-family="Arial, sans-serif" font-weight="700"
+        text-anchor="middle">Contact Me</text>
+
+    <rect x="1040" y="160" width="360" height="430" rx="34" fill="#15223A" stroke="#2A3A55" />
+    <rect x="1100" y="220" width="150" height="150" rx="75" fill="url(#paint0_linear)" />
+    <text x="1175" y="310" fill="#071426" font-size="56" font-family="Arial, sans-serif" font-weight="800"
+        text-anchor="middle">AC</text>
+    <text x="1175" y="430" fill="#EDF2FF" font-size="34" font-family="Arial, sans-serif" font-weight="700"
+        text-anchor="middle">Alex Carter</text>
+    <text x="1175" y="470" fill="#B7C4DB" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">Frontend
+        &amp; Backend Developer</text>
+
+    <rect x="1085" y="500" width="90" height="36" rx="18" fill="#1D2F4D" />
+    <text x="1130" y="525" fill="#EDF2FF" font-size="18" font-family="Arial, sans-serif"
+        text-anchor="middle">React</text>
+    <rect x="1188" y="500" width="100" height="36" rx="18" fill="#1D2F4D" />
+    <text x="1238" y="525" fill="#EDF2FF" font-size="18" font-family="Arial, sans-serif"
+        text-anchor="middle">Node.js</text>
+    <rect x="1302" y="500" width="88" height="36" rx="18" fill="#1D2F4D" />
+    <text x="1346" y="525" fill="#EDF2FF" font-size="18" font-family="Arial, sans-serif" text-anchor="middle">API</text>
+
+    <defs>
+        <linearGradient id="paint0_linear" x1="1100" y1="220" x2="1250" y2="370" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6EA8FE" />
+            <stop offset="1" stop-color="#7EF0D7" />
+        </linearGradient>
+    </defs>
+</svg>

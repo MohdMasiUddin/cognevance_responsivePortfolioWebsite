@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Carter | Portfolio</title>
+    <meta
+      name="description"
+      content="Responsive portfolio website for a full stack developer."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <a href="#home" class="brand">
+          <span class="brand-mark">AC</span>
+          <span>Alex Carter</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-menu">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="btn btn-primary nav-cta">Hire Me</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Full Stack Web Developer</p>
+            <h1>
+              Building modern digital experiences that
+              <span>solve real problems.</span>
+            </h1>
+            <p class="subtitle">
+              I design and build responsive web applications that blend clean user experiences with powerful backend systems.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+            <ul class="hero-metrics">
+              <li><strong>5+</strong> years experience</li>
+              <li><strong>25+</strong> projects shipped</li>
+              <li><strong>99%</strong> client satisfaction</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual reveal delay-1">
+            <div class="profile-card">
+              <div class="badge-top">Available for work</div>
+              <div class="avatar-wrap">
+                <div class="avatar">AC</div>
+              </div>
+              <h3>Alex Carter</h3>
+              <p>Frontend & Backend Developer</p>
+              <div class="tech-stack">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+                <span>API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">About Me</p>
+            <h2>Turning ideas into scalable digital products.</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-card reveal">
+              <p>
+                I am a passionate full stack developer focused on building intuitive interfaces and reliable backend systems. My work spans web app development, API development, database design, and performance optimization.
+              </p>
+              <p>
+                I enjoy collaborating with product teams to turn complex business requirements into practical, user-friendly solutions. My aim is to create software that is simple to use and strong under pressure.
+              </p>
+            </div>
+
+            <div class="stats reveal delay-1">
+              <div>
+                <strong>2019</strong>
+                <span>Started coding</span>
+              </div>
+              <div>
+                <strong>8</strong>
+                <span>Industry projects</span>
+              </div>
+              <div>
+                <strong>12</strong>
+                <span>Freelance clients</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section dark-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Skills</p>
+            <h2>Tools and technologies I work with.</h2>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-card reveal">
+              <h3>Frontend</h3>
+              <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Responsive Design</li>
+              </ul>
+            </div>
+            <div class="skill-card reveal delay-1">
+              <h3>Backend</h3>
+              <ul>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>REST APIs</li>
+                <li>Authentication</li>
+                <li>Server Deployment</li>
+              </ul>
+            </div>
+            <div class="skill-card reveal delay-2">
+              <h3>Database</h3>
+              <ul>
+                <li>MongoDB</li>
+                <li>PostgreSQL</li>
+                <li>SQLite</li>
+                <li>Data Modeling</li>
+                <li>Query Optimization</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Projects</p>
+            <h2>Selected work that demonstrates my craft.</h2>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card reveal">
+              <div class="project-image project-one"></div>
+              <div class="project-content">
+                <span class="tag">E-commerce</span>
+                <h3>ShopSphere</h3>
+                <p>
+                  A responsive online shopping platform with product filters, shopping cart, and secure checkout flow.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal delay-1">
+              <div class="project-image project-two"></div>
+              <div class="project-content">
+                <span class="tag">Dashboard</span>
+                <h3>InsightBoard</h3>
+                <p>
+                  A business analytics dashboard built to present sales, traffic, and KPI data through interactive charts.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal delay-2">
+              <div class="project-image project-three"></div>
+              <div class="project-content">
+                <span class="tag">SaaS</span>
+                <h3>TaskFlow Pro</h3>
+                <p>
+                  A collaboration and task management application designed for teams seeking efficient workflows and tracking.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">Contact</p>
+            <h2>Let’s build something great together.</h2>
+            <p>
+              I am open to freelance projects, product collaborations, and full-time opportunities.
+            </p>
+            <div class="contact-details">
+              <p><strong>Email:</strong> alex.carter.dev@example.com</p>
+              <p><strong>Location:</strong> Austin, Texas</p>
+            </div>
+          </div>
+
+          <form id="contactForm" class="contact-form reveal delay-1">
+            <div class="field-row">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="Your email" required />
+              </label>
+            </div>
+
+            <label>
+              <span>Subject</span>
+              <input type="text" name="subject" placeholder="Project / inquiry" />
+            </label>
+
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+            </label>
+
+            <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+            <p id="formStatus" class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Alex Carter</p>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
