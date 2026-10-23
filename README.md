@@ -1,100 +1,126 @@
 # Responsive Portfolio Website
 
-A full-stack portfolio website built for the Cognevance Full Stack Web Developer project. The project includes a responsive frontend and a backend contact form that stores messages in a SQLite database.
+A responsive full-stack portfolio website developed for the **Cognevance Technologies Full Stack Web Developer project task**. It showcases personal information, technical skills, projects, and a contact form with backend integration.
+
+## Live Demo
+
+- **Live Website:** https://cognevance-responsiveportfoliowebsite.onrender.com
+- **GitHub Repository:** https://github.com/MohdMasiUddin/cognevance_responsivePortfolioWebsite
 
 ## Project Overview
 
-This portfolio website includes:
+The portfolio website includes:
+
 - Responsive landing page
 - About section with profile summary
-- Skills section with technology badges
+- Skills section showcasing technical skills
 - Projects showcase
 - Contact form with backend validation
-- Database integration for saving contact submissions
+- Database integration for storing contact messages
 - Mobile-friendly navigation and animations
-
-## Repository Naming
-
-Recommended GitHub repository name:
-- cognevance_responsivePortfolioWebsite
 
 ## Tech Stack
 
-- Frontend: HTML, CSS, JavaScript
-- Backend: Node.js, Express
-- Database: SQLite
-- Deployment: Vercel / Netlify / Render / Railway
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js, Express.js
+- **Database:** PostgreSQL
+- **Deployment:** Render
+- **Version Control:** Git and GitHub
 
 ## Project Structure
 
-- `backend/` – Express server, API routes, database setup
-- `frontend/` – HTML, CSS, JavaScript for the portfolio UI
-- `docs/screenshots/` – project screenshots and design previews
+```text
+cognevance_responsivePortfolioWebsite/
+├── backend/
+├── data/
+├── docs/
+│   └── screenshots/
+├── frontend/
+├── package.json
+├── package-lock.json
+├── server.js
+└── README.md
+```
+
+## Prerequisites
+
+- Node.js and npm
+- Git
+- A PostgreSQL database for contact form storage
 
 ## Setup Instructions
 
-1. Clone the repository
-   ```bash
-   git clone <your-repo-url>
-   cd cognevance_responsivePortfolioWebsite
-   ```
+### 1. Clone the Repository
 
-2. Install backend dependencies
-   ```bash
-   cd backend
-   npm install
-   ```
+```bash
+git clone https://github.com/MohdMasiUddin/cognevance_responsivePortfolioWebsite.git
+cd cognevance_responsivePortfolioWebsite
+```
 
-3. Start the backend server
-   ```bash
-   npm start
-   ```
+### 2. Install Dependencies
 
-4. Open the app in your browser
-   ```text
-   http://localhost:8080
-   ```
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Set `DATABASE_URL` to your PostgreSQL connection string.
+
+For local development, configure it in your environment or a properly configured `.env` file. Never commit database credentials or other secrets to GitHub.
+
+### 4. Start the Server
+
+```bash
+npm start
+```
+
+### 5. Open the Website
+
+Visit:
+
+http://localhost:8080
+
+The application uses the configured port, with port 8080 as the local default.
 
 ## API Endpoints
 
-- `GET /api/health` – checks if the backend is running
-- `POST /api/contact` – saves form submissions
-- `GET /api/messages` – retrieves saved contact messages
+- `GET /api/health` — Checks whether the backend is running.
+- `POST /api/contact` — Validates and stores contact form submissions.
 
-## Contact Form Flow
+## Contact Form Workflow
 
-1. User fills the contact form on the frontend.
-2. Frontend sends data to the backend `/api/contact` endpoint.
-3. Backend validates the submitted data.
-4. The message is inserted into the SQLite database.
-5. A success message is returned to the user.
+1. A visitor fills out the contact form.
+2. The frontend sends the submitted information to the backend.
+3. The backend validates the required fields.
+4. Valid submissions are stored in the PostgreSQL database.
+5. The visitor receives a success or error response.
 
 ## Deployment
 
-You can deploy this project on:
-- Render
-- Railway
-- Vercel for frontend static hosting plus separate backend host
-- Netlify for static frontend + external server
+The application is configured for deployment on Render.
 
-For a simple deployment, Render or Railway is recommended because they support Node.js backend hosting.
+Live Demo: https://cognevance-responsiveportfoliowebsite.onrender.com
+
+The deployed application requires the appropriate database configuration and environment variables.
 
 ## Screenshots
 
-The project includes a sample visual preview in `docs/screenshots/portfolio-home.svg`.
+Project screenshots and design previews are maintained in the `docs/screenshots/` directory.
 
 ## Future Enhancements
 
-- Add portfolio project filtering
-- Use a React front-end
-- Add email notifications for new messages
-- Add admin dashboard for viewing submissions
-- Integrate with MongoDB or PostgreSQL
+- Add project filtering.
+- Improve accessibility and performance.
+- Add email notifications for contact submissions.
+- Develop a secure admin dashboard for viewing contact messages.
 
 ## Author
 
-Alex Carter
+**Mohd Masi Uddin**
+
+GitHub: https://github.com/MohdMasiUddin
 
 ## License
 
-This project is licensed under the MIT License.
+This project is intended for educational and portfolio purposes. Add an MIT `LICENSE` file if you choose to distribute it under the MIT License.
